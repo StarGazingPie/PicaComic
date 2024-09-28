@@ -35,13 +35,13 @@ jobs:
           ENCODED_KEYSTORE: ${{ secrets.ENCODED_KEYSTORE }}
       # 打包 APK
       - run: flutter build apk --release
-        env:
-          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
-          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
-          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD}}
+        #env:
+        #  KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+        #  KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+        #  KEY_PASSWORD: ${{ secrets.KEY_PASSWORD}}
       # 发布到 Release
-      - name: Release apk
-        uses: ncipollo/release-action@v1.5.0
-        with:
-          artifacts: "build/app/outputs/apk/release/*.apk"
-          token: ${{ secrets.RELEASE_TOKEN }}
+      #- name: Release apk
+      #  uses: ncipollo/release-action@v1.5.0
+      #  with:
+      #    artifacts: "build/app/outputs/apk/release/*.apk"
+      #    token: ${{ secrets.RELEASE_TOKEN }}
